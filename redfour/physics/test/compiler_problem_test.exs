@@ -14,6 +14,6 @@ defmodule CompilerProblemTest do
 
   test "converting m to km" do
     val = 120.5 |> to_km
-    assert val == 193.121
+    assert val == 0.1205
   end
 end
