@@ -32,6 +32,10 @@ defmodule Physics.Rocketry do
       |> square_root
   end
 
+  def orbital_acceleration(height) do
+    (orbital_speed(height) |> squared) / orbital_radius(height)
+  end
+
   # Private methods idiomatically defined at bottom of module.
 
   defp orbital_radius(height) do
