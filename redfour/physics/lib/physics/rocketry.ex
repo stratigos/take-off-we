@@ -68,6 +68,12 @@ end
 # Do all of the things cohesive to the whooshing and screaching of rockets.
 defmodule Physics.Rocketry do
 
+  #################################################################
+  # Chapter 7 notes:
+  # - The mass of Mars is 6.39e23kg and its radius is 3.4e6m.
+  # - The mass of the Moon is 7.35e22kg and its radius is 1.73e6m.
+  #################################################################
+
   def escape_velocity(:earth) do
     %{ mass: 5.972e24, radius: 6.371e6 }
      |> escape_velocity
