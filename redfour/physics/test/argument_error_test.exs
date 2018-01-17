@@ -7,6 +7,6 @@ defmodule ArgumentErrorTest do
 
   test "a non-compiling Erlang error" do
     val = say_hello "Steve", age: 12
-    assert length(val) > 10
+    assert String.length(val) > 10
   end
 end
