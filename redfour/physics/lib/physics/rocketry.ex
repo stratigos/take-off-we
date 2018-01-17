@@ -48,4 +48,9 @@ defmodule Physics.Rocketry do
     earth.radius + (height |> to_meters)
   end
 
+  defp calculate_escape(%{mass: mass, radius: radius}) do
+    2 * newtons_gravitational_constant * mass / radius
+      |> square_root
+  end
+
 end

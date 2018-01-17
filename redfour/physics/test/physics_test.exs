@@ -39,7 +39,7 @@ defmodule PhysicsTest do
 
   test "Orbital term for 100km above earth" do
     term = Physics.Rocketry.orbital_term(100)
-    assert (term > 4) && (term < 5)
+    assert (term > 4) && (term < 5) # Oh noes, Dot-Net loving CTO might fires me! (see end of Chapter 7)
   end
 
   test "ConverterTwo works" do
