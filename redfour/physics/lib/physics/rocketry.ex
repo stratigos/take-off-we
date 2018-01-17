@@ -26,4 +26,16 @@ defmodule Physics.Rocketry do
       |> to_km
       |> to_nearest_tenth
   end
+
+  def orbital_speed(height) do
+    newtons_gravitational_constant * earth.mass / orbital_radius(height)
+      |> square_root
+  end
+
+  # Private methods idiomatically defined at bottom of module.
+
+  defp orbital_radius(height) do
+    earth.radius + (height |> to_meters)
+  end
+
 end
