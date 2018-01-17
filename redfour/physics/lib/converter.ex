@@ -69,6 +69,9 @@ defmodule Converter do
   def round_to(val, precision) when is_float(val) do
     Float.round(val, precision)
   end
+  def round_to(val, precision) when is_integer(val) do
+    round(val)/1
+  end
 
   def seconds_to_hours(val)  when is_integer(val) or is_float(val) do
     val / 3600 |> to_nearest_tenth

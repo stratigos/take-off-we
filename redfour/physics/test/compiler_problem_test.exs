@@ -4,12 +4,12 @@ defmodule CompilerProblemTest do
 
   test "rounding an integer" do
     val = 19 |> round_to(0)
-    assert val == 20
+    assert val == 19.0
   end
 
   test "rounding a float" do
-    val = 1.9 |> round_to
-    assert val == 2.0
+    val = 1.89 |> round_to(1)
+    assert val == 1.9
   end
 
   test "converting m to km" do
