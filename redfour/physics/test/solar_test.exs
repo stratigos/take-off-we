@@ -39,4 +39,9 @@ defmodule SolarTest do
   test "We have 8 solar flares", %{data: flares} do
     assert length(flares) == 8
   end
+
+  test "We can detect dangerous solar flares",  %{data: flares} do
+    dangerous = Solar.no_eva(flares)
+    assert length(dangerous) == 3
+  end
 end
