@@ -35,4 +35,8 @@ defmodule SolarTest do
     ]
     {:ok, data: flares}
   end
+
+  test "We have 8 solar flares", %{data: flares} do
+    assert length(flares) == 8
+  end
 end
