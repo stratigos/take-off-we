@@ -18,4 +18,9 @@ defmodule Solar do
   #  `&1` denotes the first argument passed into current func scope
   def no_eva(flares), do: Enum.filter flares, &(power(&1) > 1000)
 
+  def deadliest(flares) do
+    Enum.map(flares, &(power(&1)))
+      |> Enum.max
+  end
+
 end

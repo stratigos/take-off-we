@@ -44,4 +44,9 @@ defmodule SolarTest do
     dangerous = Solar.no_eva(flares)
     assert length(dangerous) == 3
   end
+
+  test "We can get the deadliest Solar flare", %{data: flares} do
+    deadliest = Solar.deadliest(flares)
+    assert deadliest == 99000
+  end
 end
