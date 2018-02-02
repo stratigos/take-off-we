@@ -100,5 +100,15 @@ defmodule Solar do
       is_deadly <- [power > 1000],
       do: %{power: power, is_deadly: is_deadly}
   end
+  # The above demonstrates the power of Elixir yet again, but for this simple
+  #  purpose, it is not as clear or concise. The following uses `Enum.map` to
+  #  produce the same enumerable of Map instances, with more clear or easy to
+  #  comprehend code.
+  def flare_list_enum(flares) do
+    Enum.map flares, fn(flare) ->
+      p = power(flare)
+      %{power: p, is_deadly: p > 1000}
+    end
+  end
 
 end
