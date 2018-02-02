@@ -86,4 +86,19 @@ defmodule Solar do
     (for flare <- flares, do: power(flare)) |> Enum.sum
   end
 
+  # Demonstrate data transformation by producing a keyword list of flare-power
+  #  and a rating of how deadly each is.
+  # One way of doing this is via a Comprehension with several generators to
+  #  produce each value in the resulting List or Map:
+  def flare_list(flares) do
+    # Get `flare` from the first generator, and use it in the second. Get
+    #  `power` from the second generator, and use it in the third. Then get
+    #  `is_deadly` from the third generator. Then build a member of the
+    #  enumerable from the results of the generators. Its not a loop, I swear!
+    for flare <- flares,
+      power <- [power(flare)],
+      is_deadly <- [power > 1000],
+      do: %{power: power, is_deadly: is_deadly}
+  end
+
 end
