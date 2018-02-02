@@ -67,4 +67,14 @@ defmodule Solar do
     total_flare_power(tail, new_total)
   end
 
+  # The above methodology for `total_flare_power` is overkill for this simple
+  #  sum, given the `Enum.reduce/3` function. While it serves as a demo of the
+  #  power of pattern matching, its far too verbose for something accomplished
+  #  by a core library (below).
+  def total_flare_power_enum(flares) do
+    Enum.reduce flares, 0, fn(flare, total) ->
+      power(flare) + total
+    end
+  end
+
 end
