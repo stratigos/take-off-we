@@ -4,7 +4,7 @@ defmodule Physics.Rocketry do
   import Calcs
   import Converter
   import Physics.Laws
-  import Planets
+  import Planet
 
   def escape_velocity(:earth) do
     earth
