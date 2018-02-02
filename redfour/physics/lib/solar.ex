@@ -1,8 +1,26 @@
 defmodule Solar do
 
+  # Use pattern matching to claculate flare-power based on conditions within
+  #  each flare Map instance.
   def power(%{classification: :C, scale: s}), do: s * 1
   def power(%{classification: :M, scale: s}), do: s * 10
   def power(%{classification: :X, scale: s}), do: s * 1000
+
+  # Another way of perfoming the above procedure, based on the conditions in
+  #  each flare, is with the `cond` statement (like a *switch* or *case*
+  #  statement in Elixir).
+  # This is not a preferred pattern for Elixir, much like `if`, `unless`, or
+  #  `case` statements (which are Macros, and not a language construct), its
+  #  just another option. Pattern matching and guard clauses are the preferred
+  #  idiom(s).
+  def power_cond(flare) do
+    factor = cond do
+      flare.classification == :M -> 10
+      flare.classification == :X -> 1000
+      true -> 1 # This is the default or catch-all clause of `cond`.
+    end
+    factor * flare.scale
+  end
 
   # Long version for function definition:
   # def no_eva(flares) do
