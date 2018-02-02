@@ -77,4 +77,13 @@ defmodule Solar do
     end
   end
 
+  # Yet another way to "reduce" the list of flare-power levels to a single
+  #  value is a Comprehension (see end of ch 10, and middle of ch 11).
+  def total_flare_power_comprehension(flares) do
+    # Don't be tricked by the `for` keyword! A Comprehension is *not* a loop.
+    # Wrap the Comprehension in paranthesis, to prevent the first evaluation
+    #  of `power()` to be piped to `Enum.sum`.
+    (for flare <- flares, do: power(flare)) |> Enum.sum
+  end
+
 end
