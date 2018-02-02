@@ -49,4 +49,21 @@ defmodule SolarTest do
     deadliest = Solar.deadliest(flares)
     assert deadliest == 99000
   end
+
+  # test "total flare power using recursion", %{data: flares} do
+  #   Solar.total_flare_power(flares) |> IO.inspect
+  # end
+  #
+  # test "total flare power using enums", %{data: flares} do
+  #   Solar.total_flare_power_enum(flares) |> IO.inspect
+  # end
+  #
+  # test "a flare list with comprehensions", %{data: flares} do
+  #   Solar.flare_list(flares) |> IO.inspect
+  # end
+  #
+  # test "a flare list with enums", %{data: flares} do
+  #   Solar.flare_list_enum(flares) |> IO.inspect
+  # end
+
 end
