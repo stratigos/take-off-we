@@ -2,10 +2,12 @@ defmodule Solar do
 
   # Use pattern matching to claculate flare-power based on conditions within
   #  each flare Map instance.
-  def power(%{classification: :C, scale: s}), do: s * 1
-  def power(%{classification: :M, scale: s}), do: s * 10
-  def power(%{classification: :X, scale: s}), do: s * 1000
-
+  # Below is a simple example of pattern matching against a flare Map:
+  #
+  # def power(%{classification: :C, scale: s}), do: s * 1
+  # def power(%{classification: :M, scale: s}), do: s * 10
+  # def power(%{classification: :X, scale: s}), do: s * 1000
+  #
   # Another way of perfoming the above procedure, based on the conditions in
   #  each flare, is with the `cond` statement (like a *switch* or *case*
   #  statement in Elixir).
@@ -21,6 +23,19 @@ defmodule Solar do
     end
     factor * flare.scale
   end
+  #
+  # As requirements expand, the drawbacks to adding conditionals to meet said
+  #  requirements becomes more apparent. If, as demonstrated below, the
+  #  requirements also include a need to modify the power reading based on the
+  #  number of stations that have recorded each flare, guard clauses serve to
+  #  enhance the pattern matching idiom, rather than resort to polluting code
+  #  with nested conditionals.
+  def power(%{classification: :C, scale: s}), do: s
+  def power(%{classification: :M, scale: s}), do: s * 10
+  def power(%{classification: :X, scale: s, stations: c}) when c < 5,
+    do: s * 1000 * 1.1
+  def power(%{classification: :X, scale: s, stations: c}) when c >= 5,
+    do: s * 1000
 
   # Long version for function definition:
   # def no_eva(flares) do
