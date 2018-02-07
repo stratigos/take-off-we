@@ -21,7 +21,8 @@ defmodule Physics.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:timex, "~> 2.1.4"} # This learning video was created ca. Elixir 1.2 (before time datatypes)
+      {:timex, "~> 2.1.4"}, # This learning video was created ca. Elixir 1.2 (before time datatypes)
+      {:amnesia, "~> 0.2.7"} # Note that using the github repo (as in ch 13) is broken. DL from Hex. 
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
     ]
