@@ -15,6 +15,16 @@ use Mix.Config
 # and access this configuration in your application as:
 #
 #     Application.get_env(:physics, :key)
+
+config :physics, Physics.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  database: "taking_off_with_elixir",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost"
+
+config :physics, ecto_repos: [Physics.Repo]
+
 #
 # You can also configure a 3rd-party app:
 #
