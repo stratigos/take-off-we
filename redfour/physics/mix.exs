@@ -11,7 +11,7 @@
 #  - `iex -S mix`
 #  Then, when IEX is loaded, type:
 #  - `:observer.start`
-#  ... and behold the Erland process tree and all kinds of useful, visualized
+#  ... and behold the Erlang process tree and all kinds of useful, visualized
 #  info about the application's runtime. All info is on the running processes
 #  running on the current Erland VM.
 defmodule Physics.Mixfile do
