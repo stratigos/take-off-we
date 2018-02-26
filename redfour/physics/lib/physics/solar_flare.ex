@@ -1,5 +1,4 @@
 defmodule Physics.SolarFlare do
-
   use Ecto.Schema
 
   schema "solar_flares" do
