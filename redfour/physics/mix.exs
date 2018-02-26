@@ -30,9 +30,8 @@ defmodule Physics.Mixfile do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      # extra_applications: [:logger, :timex, :postgrex, :ecto]
       applications: [:logger, :timex, :ecto, :postgrex],
-      mod: { Physics, [] }
+      mod: { Physics, [] }, # Calls `Physics.start`
     ]
   end
 
